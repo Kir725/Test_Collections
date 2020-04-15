@@ -1,17 +1,19 @@
 package com.kolmikra;
 
-import com.kolmikra.testers.ListTester;
-import com.kolmikra.testers.MapTester;
-import com.kolmikra.testers.SetTester;
+import com.kolmikra.tests.list.ListTester;
+import com.kolmikra.tests.map.MapTester;
+import com.kolmikra.tests.set.SetTester;
 
 public class Main {
 
     public static void main(String[] args) {
-        ListTester listTester= new ListTester();
+
+        ListTester listTester = new ListTester();
+        listTester.listCheck();
         SetTester setTester = new SetTester();
+        setTester.setCheck();
         MapTester mapTester = new MapTester();
-        listTester.checkList();
-//        setTester.checkSet();
-//        mapTester.checkMap();
+        mapTester.mapCheck();
+
     }
 }

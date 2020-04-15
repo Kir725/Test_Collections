@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.List;
 
 
-public interface ListOperation<E> {
+public interface IListOperation<E> {
     void run(List<E> list, E element);
 }
 

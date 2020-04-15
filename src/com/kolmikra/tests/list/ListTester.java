@@ -6,7 +6,6 @@ import com.kolmikra.tests.util.FasterCollection;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 import static com.kolmikra.tests.util.Iterations.*;
 
@@ -35,7 +34,7 @@ public class ListTester extends Tester {
         iterCheck((List, x) -> List.remove(gen.nextInt(List.size()-1)), "Remove from random", TO_REMOVE.getIterValue());
         iterCheck((List, x) -> List.remove(List.size()-1), "Remove from end", TO_REMOVE.getIterValue());
     }
-    private void iterCheck(ListOperation<Object> action, String actionName, int[] iterations){
+    private void iterCheck(IListOperation<Object> action, String actionName, int[] iterations){
         for (int iterValue : iterations) {
             System.out.println("============== "+ actionName + " for " + iterValue + " iterations=================");
             for (List<Object> curList : lists) {
@@ -46,7 +45,7 @@ public class ListTester extends Tester {
         }
     }
 
-    private void check(List<Object> list, ListOperation<Object> action, String actionName, int iterValue) {
+    private void check(List<Object> list, IListOperation<Object> action, String actionName, int iterValue) {
         list.clear();
         list.addAll(minData);
         start = System.nanoTime();

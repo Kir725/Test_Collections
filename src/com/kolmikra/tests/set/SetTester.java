@@ -27,7 +27,7 @@ public class SetTester extends Tester {
         iterCheck(Set::remove,"Remove Random", TO_REMOVE.getIterValue());
     }
 
-    private void iterCheck(SetOperation<Integer> action, String actionName, int[] iterations){
+    private void iterCheck(ISetOperation<Integer> action, String actionName, int[] iterations){
         for (int iterValue : iterations) {
             System.out.println("============== "+ actionName + " for " + iterValue + " iterations=================");
             for (Set<Integer> curSet : sets) {
@@ -38,7 +38,7 @@ public class SetTester extends Tester {
         }
     }
 
-    private void check(Set<Integer> set, SetOperation<Integer> action, String actionName, int iterValue) {
+    private void check(Set<Integer> set, ISetOperation<Integer> action, String actionName, int iterValue) {
         set.clear();
         set.addAll(minData);
         start = System.nanoTime();

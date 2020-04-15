@@ -27,7 +27,7 @@ public class MapTester extends Tester {
         iterCheck((Map,key,value)-> Map.remove(key),"Remove Random", TO_REMOVE.getIterValue());
     }
 
-    private void iterCheck(MapOperation<String, Integer> action, String actionName, int[] iterations){
+    private void iterCheck(IMapOperation<String, Integer> action, String actionName, int[] iterations){
         for (int iterValue : iterations) {
             System.out.println("============== "+ actionName + " for " + iterValue + " iterations=================");
             for (Map<String, Integer> curMap : maps) {
@@ -38,7 +38,7 @@ public class MapTester extends Tester {
         }
     }
 
-    private void check(Map<String, Integer> map, MapOperation<String, Integer> action, String actionName, int iterValue) {
+    private void check(Map<String, Integer> map, IMapOperation<String, Integer> action, String actionName, int iterValue) {
         map.clear();
         map.putAll(minData);
         start = System.nanoTime();
